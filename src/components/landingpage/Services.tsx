@@ -1,9 +1,12 @@
+"use client"
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 import { FaRegClipboard } from "react-icons/fa";
 import { MdDesignServices, MdSpaceDashboard } from "react-icons/md";
 import { RiArmchairLine } from "react-icons/ri";
@@ -37,8 +40,17 @@ const servicesData = [
 
 export function Services() {
   return (
-    <section id="service" className="w-full py-16 bg-white flex flex-col items-center container mx-auto px-4">
-      <div className="w-full flex flex-col justify-center items-center">
+    <section
+      id="service"
+      className="w-full py-16 bg-white flex flex-col items-center container mx-auto px-4"
+    >
+      <motion.div
+        className="w-full flex flex-col justify-center items-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, type: "spring" }}
+        viewport={{ once: true }}
+      >
         <h1 className="text-sm md:text-base font-medium mb-4 text-white text-center bg-secondary rounded-full px-4 py-1 shadow-md w-fit">
           Services
         </h1>
@@ -46,20 +58,28 @@ export function Services() {
         <p className="text-lg md:text-xl text-gray-700 text-center max-w-2xl mb-8">
           Find out which one of our services fit the needs of your project
         </p>
-      </div>
+      </motion.div>
       <Accordion type="single" collapsible className="w-full">
         {servicesData.map((service, idx) => (
-          <AccordionItem key={idx} value={`item-${idx}`}>
-            <AccordionTrigger className="text-xl font-normal cursor-pointer hover:no-underline">
-              <span className="flex items-center gap-2">
-                {service.icon}
-                {service.title}
-              </span>
-            </AccordionTrigger>
-            <AccordionContent className="text-base font-light">
-              {service.content}
-            </AccordionContent>
-          </AccordionItem>
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: idx * 0.15, type: "spring" }}
+            viewport={{ once: true }}
+          >
+            <AccordionItem value={`item-${idx}`}>
+              <AccordionTrigger className="text-xl font-normal cursor-pointer hover:no-underline">
+                <span className="flex items-center gap-2">
+                  {service.icon}
+                  {service.title}
+                </span>
+              </AccordionTrigger>
+              <AccordionContent className="text-base font-light">
+                {service.content}
+              </AccordionContent>
+            </AccordionItem>
+          </motion.div>
         ))}
       </Accordion>
     </section>

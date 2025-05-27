@@ -7,6 +7,7 @@ import { LuAsterisk } from "react-icons/lu";
 import * as Yup from "yup";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 export const navSocials = [
   { name: "Facebook", href: "#", icon: <FaFacebookF /> },
@@ -49,7 +50,14 @@ export default function Cta() {
   });
   
   return (
-    <section id="contact-us" className="px-4 md:px-4 w-full">
+    <motion.section 
+      id="contact-us" 
+      className="px-4 md:px-4 w-full" 
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, type: "spring" }}
+      viewport={{ once: true }}
+    >
       <div className="w-full py-16 bg-gradient-to-r from-primary to-[#391b19] flex flex-col justify-center items-center md:px-6 px-4 rounded-2xl">
         <div className="max-w-3xl w-full flex flex-col items-center text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow">
@@ -176,6 +184,6 @@ export default function Cta() {
           </div>
         </main>
       </div>
-    </section>
+    </motion.section>
   );
 }

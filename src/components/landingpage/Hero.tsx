@@ -5,6 +5,7 @@ import ButtonCustom from "@/components/ui/ButtonCustom";
 import { GoDotFill } from "react-icons/go";
 import { FaBars, FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export const navData = [
   { name: "Home", href: "#" },
@@ -123,21 +124,42 @@ export default function Hero() {
         </nav>
 
         {/* Hero Content */}
-        <div className="relative z-20 flex flex-1 flex-col items-start justify-end text-start md:px-8 px-0">
-          <p className="text-sm flex items-center gap-2 text-white px-3 py-1 bg-gray-700 rounded-full mb-4 font-light">
+       <div className="relative z-20 flex flex-1 flex-col items-start justify-end text-start md:px-8 px-0">
+          <motion.p
+            className="text-sm flex items-center gap-2 text-white px-3 py-1 bg-gray-700 rounded-full mb-4 font-light"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
+          >
             <GoDotFill className="animate-[ping_1s_ease-in-out_infinite] text-white" />
             Available for work
-          </p>
-          <h1 className="text-4xl md:text-5xl font-normal text-white mb-4 drop-shadow-lg max-w-5xl">
+          </motion.p>
+          <motion.h1
+            className="text-4xl md:text-5xl font-normal text-white mb-4 drop-shadow-lg max-w-5xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7, type: "spring" }}
+          >
             Your trusted partner for quality home improvement
-          </h1>
-          <p className="text-base md:text-lg font-normal text-[#d0d1db] mb-8 max-w-5xl drop-shadow">
+          </motion.h1>
+          <motion.p
+            className="text-base md:text-lg font-normal text-[#d0d1db] mb-8 max-w-5xl drop-shadow"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.7, type: "spring" }}
+          >
             Transform your space with elegance and style. Discover our exclusive
             collection of decor items.
-          </p>
-          <ButtonCustom className="pl-6 py-2 mb-6 font-normal">
-            Get Started
-          </ButtonCustom>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
+          >
+            <ButtonCustom className="pl-6 py-2 mb-6 font-normal">
+              Get Started
+            </ButtonCustom>
+          </motion.div>
         </div>
 
         <div className="z-20 flex items-center justify-end gap-8 px-4">
