@@ -115,6 +115,7 @@
 
 @theme {
   --color-secondary: #391b19;
+  --color-light-gray: #d0d1db;
 }
 
 @layer base {

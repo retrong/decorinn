@@ -8,10 +8,10 @@ import { FaTimes } from "react-icons/fa";
 
 export const navData = [
   { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Services", href: "#" },
-  { name: "FAQs", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#service" },
+  { name: "Portfolio", href: "#portfolio" },
+  { name: "Contact Us", href: "#contact-us" },
 ]
 
 export const navSocials = [

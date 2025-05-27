@@ -37,7 +37,7 @@ const servicesData = [
 
 export function Services() {
   return (
-    <section id="services" className="w-full py-16 bg-white flex flex-col items-center container mx-auto">
+    <section id="service" className="w-full py-16 bg-white flex flex-col items-center container mx-auto px-4">
       <div className="w-full flex flex-col justify-center items-center">
         <h1 className="text-sm md:text-base font-medium mb-4 text-white text-center bg-secondary rounded-full px-4 py-1 shadow-md w-fit">
           Services

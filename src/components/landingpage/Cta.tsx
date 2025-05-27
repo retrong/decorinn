@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import { LuAsterisk } from "react-icons/lu";
 import * as Yup from "yup";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { toast } from "sonner";
 
 export const navSocials = [
   { name: "Facebook", href: "#", icon: <FaFacebookF /> },
@@ -18,7 +19,7 @@ const validationSchema = Yup.object({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
-  phone: Yup.string().required("Phone number is required"),
+  phone: Yup.string(),
   message: Yup.string().required("Message is required"),
 });
 
@@ -29,12 +30,26 @@ export default function Cta() {
     validationSchema,
     onSubmit: (values, { resetForm }) => {
       console.log("Form Submitted", values);
+      toast("Form submitted successfully!", {
+        description: (
+          <span className="text-gray-400">
+        {new Date().toLocaleString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        })}
+          </span>
+        )
+      });
       resetForm();
     },
   });
   
   return (
-    <section className="px-4 md:px-4 w-full">
+    <section id="contact-us" className="px-4 md:px-4 w-full">
       <div className="w-full py-16 bg-gradient-to-r from-primary to-[#391b19] flex flex-col justify-center items-center md:px-6 px-4 rounded-2xl">
         <div className="max-w-3xl w-full flex flex-col items-center text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow">
@@ -48,7 +63,10 @@ export default function Cta() {
             Book a call
           </ButtonCustom>
         </div>
+
+        {/* border line */}
         <div className="border border-[#d0d1db1a] w-full my-6 px-4" />
+
         <main className="w-full">
           <div className="flex justify-start items-start flex-col w-full">
             <h2 className="text-lg font-medium text-white px-2">Follow us</h2>
@@ -129,7 +147,9 @@ export default function Cta() {
               </div>
 
               <div>
-                <label className="block mb-1">Message</label>
+                <label className="flex mb-1">
+                  Message <LuAsterisk className="text-red-500 text-sm" />
+                </label>
                 <textarea
                   name="message"
                   rows={4}

@@ -67,10 +67,10 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="relative w-full flex flex-col justify-center items-center py-6 md:px-0 px-4 overflow-hidden mt-12 bg-[#f0e8e2]/50">
+    <section id="portfolio" className="relative w-full flex flex-col justify-center items-center py-6 md:px-0 px-4 overflow-hidden mt-12 bg-[#f0e8e2]/25">
       {/* Header */}
       <div className="flex items-center w-full justify-center">
-        <div className="flex justify-between w-full max-w-6xl items-center gap-4 md:gap-8 px-4 pt-8">
+        <div className="flex flex-col md:flex-row justify-between w-full max-w-6xl items-center gap-4 md:gap-8 px-4 pt-8">
           <h1 className="font-normal md:text-5xl text-4xl text-primary px-4">
             Our Portfolio
           </h1>
@@ -128,7 +128,7 @@ export default function Portfolio() {
               transition={{ duration: 0.3 }}
             >
               {/* Card */}
-              <div className="w-fit md:w-[412px] h-fit md:h-[476px] flex flex-col justify-between rounded shadow-[0px_0px_25px_0px_#0000001A] overflow-hidden bg-white">
+              <div className="w-fit md:w-[412px] h-[476px] flex flex-col justify-between rounded shadow-[0px_0px_25px_0px_#0000001A] overflow-hidden bg-white">
                 <div className="w-full h-full">
                   <Image
                     src={review.image}
