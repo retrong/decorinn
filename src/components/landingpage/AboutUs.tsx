@@ -1,48 +1,41 @@
 "use client"
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function AboutUs() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
   return (
-    <section id="about" className="w-full py-16 bg-white flex justify-center items-center overflow-hidden">
+    <section
+      id="about"
+      className="w-full py-16 bg-white flex justify-center items-center overflow-hidden"
+    >
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 px-4">
-        {/* Images */}
-        <div className="relative w-full flex justify-start items-center min-h-[350px]">
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, type: "spring" }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <Image
-              src="/frame-4.jpg"
-              alt="Decorinn About 1"
-              width={500}
-              height={500}
-              className="w-[70%] h-auto object-cover rounded-lg shadow-lg relative z-10"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.7, type: "spring" }}
-              viewport={{ once: true }}
-              className="absolute w-full left-20 top-10 md:left-20 md:top-15 z-20"
-            >
-              <Image
-                src="/frame-5.jpg"
-                alt="Decorinn About 2"
-                width={500}
-                height={500}
-                className="w-[70%] h-auto object-cover rounded-lg shadow-xl border-4 border-white"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center items-center order-2 md:order-1"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, type: "spring" }}
+          viewport={{ once: true }}
+          ref={ref}
+        >
+          <div className="w-full max-w-2xl aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-black">
+            {inView && (
+              <video
+                src="/preview.MOV"
+                controls
+                className="w-full h-auto object-cover"
+                poster="/video-frame2.jpg"
+              >
+                Your browser does not support the video tag.
+              </video>
+            )}
+          </div>
+        </motion.div>
         {/* Text Content */}
         <motion.div
-          className="w-full md:mt-0 mt-5"
+          className="w-full md:w-1/2 md:mt-0 mt-5 order-1 md:order-2"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, type: "spring" }}

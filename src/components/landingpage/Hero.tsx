@@ -6,6 +6,7 @@ import { GoDotFill } from "react-icons/go";
 import { FaBars, FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export const navData = [
   { name: "Home", href: "#" },
@@ -140,7 +141,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7, type: "spring" }}
           >
-            Your trusted partner for quality home improvement
+            If your space could talk, would it whisper elegance or scream
+            confusion?
           </motion.h1>
           <motion.p
             className="text-base md:text-lg font-normal text-[#d0d1db] mb-8 max-w-5xl drop-shadow"
@@ -148,17 +150,19 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7, type: "spring" }}
           >
-            Transform your space with elegance and style. Discover our exclusive
-            collection of decor items.
+            Let your space whisper elegance with a custom interior lookbook and a free interior design consultation anywhere in Nigeria, curated to silence the confusion with style and
+            intention.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
           >
-            <ButtonCustom className="pl-6 py-2 mb-6 font-normal">
-              Get Started
-            </ButtonCustom>
+            <Link href="#contact-us">
+              <ButtonCustom className="pl-6 py-2 mb-6 font-normal">
+                Book Your Free Consultation
+              </ButtonCustom>
+            </Link>
           </motion.div>
         </div>
 

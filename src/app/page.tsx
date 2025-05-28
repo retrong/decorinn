@@ -1,4 +1,5 @@
 import AboutUs from "@/components/landingpage/AboutUs";
+import ChooseUs from "@/components/landingpage/ChooseUs";
 import Cta from "@/components/landingpage/Cta";
 import Footer from "@/components/landingpage/Footer";
 import Hero from "@/components/landingpage/Hero";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <div className="flex items-center flex-col justify-center ">
       <Hero />
+      <ChooseUs />
       <AboutUs />
       <Portfolio />
       <Services />
