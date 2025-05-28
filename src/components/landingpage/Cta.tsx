@@ -64,7 +64,7 @@ export default function Cta() {
             Ready to transform your space?
           </h2>
           <p className="text-lg text-white/90 mb-8">
-            Let Decorinn help you create a home that reflects your style and
+            Let Decorinn help you create a space that reflects your style and
             personality. Contact us today for a free consultation!
           </p>
           <ButtonCustom className="bg-primary text-primary font-semibold pl-4 pr-2 py-2 rounded-full shadow-lg hover:bg-primary hover:text-primary transition-all duration-300">

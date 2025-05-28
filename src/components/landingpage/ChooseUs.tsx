@@ -6,6 +6,8 @@ import { useInView } from "react-intersection-observer";
 
 export default function ChooseUs() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  
+  const myStaticVideoUrl = "https://a096ffzo0ohltf70.public.blob.vercel-storage.com/Final-video-OlLul9rUFDOdkFykODKHsDJUABVked.MP4";
 
   return (
     <section className="w-full py-16 bg-white flex justify-center items-center">
@@ -57,7 +59,7 @@ export default function ChooseUs() {
           <div className="w-full max-w-2xl aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-black">
             {inView && (
               <video
-                src="/Final-video.MP4"
+                src={myStaticVideoUrl}
                 controls
                 className="w-full h-auto object-cover"
                 poster="/video-frame.jpg"

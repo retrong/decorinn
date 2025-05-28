@@ -25,8 +25,10 @@ export default function AboutUs() {
               <video
                 src="/preview.MOV"
                 controls
+                loop
                 className="w-full h-auto object-cover"
                 poster="/video-frame2.jpg"
+                preload="metadata"
               >
                 Your browser does not support the video tag.
               </video>
