@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 export default function AboutUs() {
   return (
-    <section id="about" className="w-full py-16 bg-white flex justify-center items-center overflow-hidden">
+    <section id="about" className="w-full md:pt-16 pt-4 pb-16 bg-white flex justify-center items-center overflow-hidden">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 px-4">
         {/* Images */}
-        <div className="relative w-full flex justify-start items-center min-h-[350px]">
+        <div className="relative w-full flex justify-start items-center min-h-[350px] md:order-1 order-2">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -42,7 +42,7 @@ export default function AboutUs() {
         </div>
         {/* Text Content */}
         <motion.div
-          className="w-full md:mt-0 mt-5"
+          className="w-full md:mt-0 mt-5 md:order-2 order-1"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, type: "spring" }}

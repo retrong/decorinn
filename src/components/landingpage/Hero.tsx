@@ -27,7 +27,7 @@ export default function Hero() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <section id="Hero" className="p-6 bg-secondary w-full min-h-screen">
+    <section id="Hero" className="md:p-6 p-4 bg-secondary w-full min-h-screen">
       <div className="relative min-h-screen w-full flex flex-col overflow-hidden p-2 bg-primary rounded-2xl">
         {/* Hero Background Image */}
         <div
