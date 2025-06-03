@@ -5,14 +5,27 @@ import ButtonCustom from "@/components/ui/ButtonCustom";
 import { useFormik } from "formik";
 import { LuAsterisk } from "react-icons/lu";
 import * as Yup from "yup";
-import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
+import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 export const navSocials = [
-  { name: "Facebook", href: "#", icon: <FaFacebookF /> },
-  { name: "Instagram", href: "#", icon: <FaInstagram /> },
-  { name: "Twitter", href: "#", icon: <FaXTwitter /> },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/dec0r.inn/",
+    icon: <FaInstagram />,
+  },
+  {
+    name: "Tiktok",
+    href: "https://www.tiktok.com/@dec0r.inn",
+    icon: <FaTiktok />,
+  },
+  {
+    name: "Whatsapp",
+    href: "https://wa.me/+2349110169337",
+    icon: <FaWhatsapp />,
+  },
 ];
 
 const validationSchema = Yup.object({
@@ -50,9 +63,9 @@ export default function Cta() {
   });
   
   return (
-    <motion.section 
-      id="contact-us" 
-      className="px-4 md:px-4 w-full" 
+    <motion.section
+      id="contact-us"
+      className="px-4 md:px-4 w-full"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, type: "spring" }}
@@ -67,9 +80,16 @@ export default function Cta() {
             Let Decorinn help you create a space that reflects your style and
             personality. Contact us today for a free consultation!
           </p>
-          <ButtonCustom className="bg-primary text-primary font-semibold pl-4 pr-2 py-2 rounded-full shadow-lg hover:bg-primary hover:text-primary transition-all duration-300">
-            Book a call
-          </ButtonCustom>
+          <a
+            href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=decorinn.info@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            title="Email Decorinn"
+          >
+            <ButtonCustom className="bg-primary text-primary font-semibold pl-4 pr-2 py-2 rounded-full shadow-lg hover:bg-primary hover:text-primary transition-all duration-300">
+              Book a call
+            </ButtonCustom>
+          </a>
         </div>
 
         {/* border line */}
@@ -83,7 +103,7 @@ export default function Cta() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="flex items-center gap-2 text-white hover:text-primary hover:bg-white hover:rounded-full p-1 transition-all duration-300 text-2xl my-2"
+                  className="flex items-center gap-2 text-white hover:text-primary hover:bg-white hover:rounded-full p-2 transition-all duration-300 text-2xl my-2"
                 >
                   {social.icon}
                 </a>

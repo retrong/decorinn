@@ -3,10 +3,12 @@
 import React, { useState } from "react";
 import ButtonCustom from "@/components/ui/ButtonCustom";
 import { GoDotFill } from "react-icons/go";
-import { FaBars, FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaBars, FaInstagram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const navData = [
   { name: "Home", href: "#" },
@@ -17,9 +19,21 @@ export const navData = [
 ]
 
 export const navSocials = [
-  { name: "Facebook", href: "#", icon: <FaFacebookF /> },
-  { name: "Instagram", href: "#", icon: <FaInstagram /> },
-  { name: "Twitter", href: "#", icon: <FaXTwitter /> },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/dec0r.inn/",
+    icon: <FaInstagram />,
+  },
+  {
+    name: "Tiktok",
+    href: "https://www.tiktok.com/@dec0r.inn",
+    icon: <FaTiktok />,
+  },
+  {
+    name: "Whatsapp",
+    href: "https://wa.me/+2349110169337",
+    icon: <FaWhatsapp />,
+  },
 ];
 
 export default function Hero() {
@@ -171,7 +185,9 @@ export default function Hero() {
             <a
               key={social.name}
               href={social.href}
-              className="flex items-center gap-2 text-white hover:text-primary hover:bg-white hover:rounded-full p-2 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-primary hover:bg-white hover:rounded-full p-2 transition-all duration-300 text-2xl"
             >
               {social.icon}
             </a>

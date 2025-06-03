@@ -1,10 +1,24 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 
-const navSocials = [
-  { name: "Facebook", href: "#", icon: <FaFacebookF /> },
-  { name: "Instagram", href: "#", icon: <FaInstagram /> },
-  { name: "Twitter", href: "#", icon: <FaXTwitter /> },
+
+export const navSocials = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/dec0r.inn/",
+    icon: <FaInstagram />,
+  },
+  {
+    name: "Tiktok",
+    href: "https://www.tiktok.com/@dec0r.inn",
+    icon: <FaTiktok />,
+  },
+  {
+    name: "Whatsapp",
+    href: "https://wa.me/+2349110169337",
+    icon: <FaWhatsapp />,
+  },
 ];
 
 const footerlinks = [
@@ -76,17 +90,17 @@ export default function Footer() {
                 className="text-base text-white"
               >
                 {" "}
-                Website design by Retrong{" "}
+                Website design by <span className="hover:italic">Retrong</span>{" "}
               </a>
             </div>
 
             {/* Socials */}
-            <div className="flex gap-4 order-1 md:order-2">
+            <div className="flex flex-row gap-4 order-1 md:order-2">
               {navSocials.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="text-white hover:bg-white hover:text-primary rounded-full p-2 transition-all duration-300 text-xl"
+                  className="text-white hover:bg-white hover:text-primary rounded-full p-2 transition-all duration-300 text-2xl"
                   aria-label={social.name}
                 >
                   {social.icon}
